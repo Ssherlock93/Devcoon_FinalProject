@@ -1,8 +1,13 @@
 # User stories
 
 ## Technical Requirements
-
-
+* Generate a group of 10 random questions out of 20 that are prepared
+* Do not repeat any questions
+* Store the users answers using local storage
+* Clear users answers so they can play again with a fresh start
+* Use variable names, classes, and id's that have uniformity
+* Work in individual branches
+* Our "GIT GOD" (Sean) will work with all branch owners to merge to master
 
 ## App User
 * As a user, I want to answer questions to help me better retain the information taught to me in the Code Fellows 201 bootcamp
