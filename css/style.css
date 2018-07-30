@@ -68,7 +68,8 @@ h3 {
 	transition: all .3s ease;
 }
 .image-about {
-  width: 25%;
+  width: 20%;
+  padding: 10px;
 }
 .hidden {
 	display: none;
@@ -81,6 +82,9 @@ h3 {
 }
 .col {
 	box-sizing: border-box;
+}
+.col-about {
+  margin-top: 100px;
 }
 header {
 	position: fixed;
