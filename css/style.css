@@ -154,6 +154,12 @@ nav a.active {
 .pad-10 {
   padding: 10px;
 }
+.margin-5 {
+  margin-top: 5%;
+}
+.margin-10 {
+  margin-top: 10%;
+}
 footer {
 	padding: 60px 30px;
 	text-align: center;	
