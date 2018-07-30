@@ -165,7 +165,10 @@ nav a.active {
   margin-top: 10%;
 }
 footer {
+	position: fixed;
+	bottom: 0;
 	padding: 60px 30px;
 	text-align: center;	
 	font-size: 1.25em;
+	
 }
