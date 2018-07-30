@@ -1,21 +1,47 @@
 <!DOCTYPE html>
-
 <html>
+
 <head>
   <title></title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400|Archivo+Black" rel="stylesheet">
 </head>
+
 <body>
+  <header class="row" id="header">
+    <div class="row">
+      <div class="column">
+        <a href="index.html">
+          <img src="" alt="the devoons" id="logo">
+        </a>
+        <nav id="nav">
+          <div id="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="scores.html">High Scores</a>
+            <a href="aboutus.html">The Team</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
   <main>
- 
-  
+    <div>
+      <form>
+        <input type="radio" name="choice" value="first"> A
+        <input type="radio" name="choice" value="second"> B
+        <input type="radio" name="choice" value="third"> C
+        <input type="radio" name="choice" value="fourth"> D
+      </form>
+      <button onclick="chooseThisAnswer()"> I choose this answer</button>
+    </div>
   </main>
-   <footer>
-     <div class="foot">About CodeFellows</div>
-     <div class="foot"></div>
-     <div class="foot"> <img src="" alt=""></div>
-    </footer>
-    <script src="app.js"></script>
+  <footer>
+    <div class="foot">About CodeFellows</div>
+    <div class="foot"></div>
+    <div class="foot"> <img src="images/CodeFellowsMap.png" alt="Code Fellows Location"></div>
+  </footer>
+  <script src="app.js"></script>
 </body>
+
 </html>
