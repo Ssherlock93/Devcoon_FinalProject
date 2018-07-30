@@ -177,3 +177,7 @@ footer {
 footer * {
 	display: inline-block;
 }
+#choices {
+	display: block;
+	clear: both;
+}
