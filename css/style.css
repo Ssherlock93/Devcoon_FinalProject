@@ -149,6 +149,9 @@ nav a.active {
 .col-4 {
 	width: 25%;
 }
+.col-3 {
+	width: 33%
+}
 .pad-30 {
 	padding: 30px;
 }
@@ -165,7 +168,14 @@ nav a.active {
   margin-top: 10%;
 }
 footer {
+	position: fixed;
+	bottom: 0;
 	padding: 60px 30px;
 	text-align: center;
 	font-size: 1.25em;
 }
+
+footer * {
+	display: inline-block;
+}
+
