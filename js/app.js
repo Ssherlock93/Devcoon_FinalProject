@@ -4,9 +4,18 @@ var questions = [];
 var answers = [];
 
 
+var FirstQuestion = {
+  question: 'what number is highest?',
+  options: { a: 2,
+    b: 3,
+    c: 4,
+    d: 5,
+  },
+  correctAnswer: 'd',
+};
 
-
-
+// questions.push(FirstQuestion);
+// console.log(FirstQuestion);
 
 
 //TODO: create local storage / Delete local storage
@@ -39,22 +48,18 @@ var answers = [];
 
 // when the user gets to index [i] .question will display, and .possibilites will display, and a blank form for them to type. Upon submit, an if statement will check that . user choice === correct answer. If so increment score and move on.
 
-var firstQuestion = {
-this.question : "what's a for loop?",
-this.possible : ["it is a golf reference","it counts to 4", "it is meaningless", "it's a loop that performs a function a specified amount of times"],
-this.correct : [3];,
-this.userResponse : '';,
-,
+// var firstQuestion = {
+// this.question : "what's a for loop?",
+// this.possible : ["it is a golf reference","it counts to 4", "it is meaningless", "it's a loop that performs a function a specified amount of times"],
+// this.correct : [3];,
+// this.userResponse : '';,
+// ,
 
-checker = function ()
-if (this.userResponse === this.correct)
-    this.answer = true;
-    else {this.answer = false}
-
-
-
-
-}
+// checker = function ()
+// if (this.userResponse === this.correct)
+//     this.answer = true;
+//     else {this.answer = false}
+// }
 
 
 
