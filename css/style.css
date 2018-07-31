@@ -354,3 +354,12 @@ section {
 .raccoon:hover + .easter-egg {
 	display: block;
 }
+
+.egg-image {
+	/* visibility: hidden; */
+	opacity: 0;
+}
+
+.egg-image:hover {
+	opacity: 1;
+}
