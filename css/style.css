@@ -143,6 +143,10 @@ nav {
 	background: none;
 }
 
+a {
+	text-decoration: none;
+}
+
 nav a {
   color: rgb(16,55,80);
 	text-decoration: none;
