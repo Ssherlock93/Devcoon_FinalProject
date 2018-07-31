@@ -9,19 +9,19 @@ var questions = [['Which of the following is true about variable naming conventi
   'JavaScript variable names must begin with a letter or the underscore character.',
   'JavaScript variable names are case sensitive.',
   'Both of the above.',
-  'c'],
+  'C'],
 
 ['Which of the following is the correct syntax to redirect a url using JavaScript?',
   'browser.location="http://www.newlocation.com";',
   'navigator.location="http://www.newlocation.com";',
   'window.location="http://www.newlocation.com";',
-  'c'],
+  'C'],
 
 ['Which built-in method removes the last element from an array and returns that element?',
   'last()',
   'pop()',
   'None of the above.',
-  'c']];
+  'C']];
 
 //this function will do the get(ting)ElementByID. It streamlines the code and reduces the need to use GetElementByID ten-fold.
 // x is just a designator. It could be anything you want. X, y, z, monkey.
@@ -70,7 +70,6 @@ document.getElementById('quiz').addEventListener('submit', checkAnswer);
 // let's create the answer checking function.
 function checkAnswer(e){
   e.preventDefault();
-
   choices = document.getElementsByName('choices');
   for(var i = 0; i < choices.length; i++){
     if(choices[i].checked){
