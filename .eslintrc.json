@@ -7,7 +7,7 @@
     }
   },
   "globals": {
-    "Chart": true
+    "questions": true
   },
   "env": {
     "browser": true,
