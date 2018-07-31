@@ -1,135 +1,73 @@
 'use strict';
-//TODO: assign variable names
-var questions = [];
-var answers = [];
+// declare the variables. position = 0 is the default position starting the quiz, and will ++ as the test progresses
+// increasing as the array is looped through.
+var position = 0, quiz, question, questions, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
 
+// questions array is stored in the questions.js file. It is mutidimensional (array of arrays). We will loop through
+// that to get the current question and check the answers based on the final position of the array [4].
 
-var FirstQuestion = {
-  question: 'what number is highest?',
-  options: { a: 2,
-    b: 3,
-    c: 4,
-    d: 5,
-  },
-  correctAnswer: 'd',
-};
-
-// questions.push(FirstQuestion);
-// console.log(FirstQuestion);
-
-
-
-//TODO: create local storage / Delete local storage
-
-
-
-//TODO: Array of questions
-// and this will be an array of objects?
-
-// Questions:?
-// Two separate arrays... containing what? Objects? Each question with it's own this.options to choose from?
-
-
-
-
-
-
-//TODO: Array of answers
-
-// What are we imagining in our answer array? objects? Boolean true or falses? If
-// index 0 is true,that means they got the first question right, otherwise boolean false.
-
-//two arrays, the first with the question objects... and the second, with the boolean true or falses, tracking the user's answers... what is the advantage of doing it this way?
-
-// So dan's imagining the first array with just questions, one question per index. A second array contains all options to choose from... at index [i] of array Questions, index [j] will be associated with it, so they'll be linked at the same index. But where are we locating the correct answers? If the first array is strictly questions, the second array strictly options to choose from, how are you handling the logic of checking user inputs against the options to choose and determining whether they're right?
-
-//Yes, what Scott was saying was along the lines of my hunch, that having answer objects contain their possible options, as well as having a correct answer. So answer objects contain all their possible options as well as which one is correct?
-
-// so starting off simply, what about having a single array with objects that contain for starters at least three properties, . question . possibilities . correct, (and possibly a . user input form)
-
-// when the user gets to index [i] .question will display, and .possibilites will display, and a blank form for them to type. Upon submit, an if statement will check that . user choice === correct answer. If so increment score and move on.
-
-// var firstQuestion = {
-// this.question : "what's a for loop?",
-// this.possible : ["it is a golf reference","it counts to 4", "it is meaningless", "it's a loop that performs a function a specified amount of times"],
-// this.correct : [3];,
-// this.userResponse : '';,
-// ,
-
-// checker = function ()
-// if (this.userResponse === this.correct)
-//     this.answer = true;
-//     else {this.answer = false}
-// }
-
-
-
-
-
-
-
-
-//TODO: ask a random question from the questions array
-
-
-
-
-
-
-
-
-//TODO: Take the input from the field (radio button)
-function chooseThisAnswer() {
-  var radios = document.getElementsByName('choice');
-  var checked = false;
-  var userAnswer;
-
-  for (var i = 0; i < radios.length; i ++) {
-    if (radios[i].checked) {
-      checked = true;
-      userAnswer = radios[i].value;
-    }
+//this function will do the get(ting)ElementByID. It streamlines the code and reduces the need to use GetElementByID ten-fold.
+// x is just a designator. It could be anything you want. X, y, z, monkey.
+function get(x) {
+  return document.getElementById(x);
+}
+//this will display the questions on the page. It will create and fill an h2 with some information.
+function displayQuestion(){
+  quiz = get('quiz');
+  // if position is less than or = to the length of the question array, display the final tally message.
+  if(position >= questions.length){
+    quiz.innerHTML = '<h2>You got ' + correctAnswer + ' of ' + questions.length + ' questions correct</h2>';
+    get('status').innerHTML = 'Test Finished';
+    // this will restart the quiz to allow for another attempt.
+    position = 0;
+    // this will reset the score back to 0.
+    correctAnswer = 0;
+    // this will stop the displayQuestion function when the quiz is completed.
+    return false;
   }
+  // shows the user where they are in the quiz. Question 1 of 10 for example.
+  get('status').innerHTML = 'Question ' + (position+1) + ' of ' + questions.length;
+  // we're getting into the weeds now. Position 0 is the actual question in the array
+  question = questions[position][0];
+  // choiceA is position 1 in the questions array for the current question. This repeats for
+  // b and c as well.
+  choiceA = questions[position][1];
+  choiceB = questions[position][2];
+  choiceC = questions[position][3];
+  // create an <h3> tag with the current question number (so fancy).
+  quiz.innerHTML = '<h3>' + question + '</h3>';
 
-  if (!checked) {
-    alert('Please, sir or maam, choose an answer, would you?');
-    return;
-  }
+  // let's add some inputs and submit button to the <h3> we created just above.
+  quiz.innerHTML += '<input type="radio" name="choices" value="A">' + choiceA + '<br>';
+  quiz.innerHTML += '<input type="radio" name="choices" value="B">' + choiceB + '<br>';
+  quiz.innerHTML += '<input type="radio" name="choices" value="C">' + choiceC + '<br><br>';
 
-  if (userAnswer === 'first') {
-    alert('you got it!');
-  }
-
-  else {
-    alert('answer is wrong');
-  }
+  // now that that is done, let's make our submit button and give it the onclick function.
+  // quiz.innerHTML += '<button onclick=\'checkAnswer()\'>Submit</button>';
+  quiz.innerHTML += '<button id="quiz-submit">Submit</button>';
 }
 
+// add an event listener for the click o the submit button we created.
+document.getElementById('quiz-submit').addEventListener('submit', checkAnswer);
 
-
-
-
-//TODO: Compare the answer from the user to the correct answer in the associated array
-
-
-
-
-
-//TODO: Display whether the answer is correct / incorrect (populate the answer div)
-
-
-
-
-
-//TODO: Push completed quiz to local storage
-
-
-
-
-
-
-//TODO: Populate the div on the results page
-
-
-
-
+// let's create the answer checking function.
+function checkAnswer(){
+  choices = document.getElementsByName('choices');
+  for(var i = 0; i < choices.length; i++){
+    if(choices[i].checked){
+      choice = choices[i].value;
+    }
+  }
+  // checking to see if the users choice === position [4].
+  if(choice === questions[position][4]){
+    // give them a big hand and increase the score!
+    correctAnswer++;
+  }
+  // this will increment the position in the array, changing the question that the
+  // user sees.
+  position++;
+  // now we need to display that next question, so we displayQuestion() again.
+  displayQuestion();
+}
+// and the event listener to make it all come together.
+window.addEventListener('load', displayQuestion, false);
