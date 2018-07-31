@@ -143,6 +143,10 @@ nav {
 	background: none;
 }
 
+a {
+	text-decoration: none;
+}
+
 nav a {
   color: rgb(16,55,80);
 	text-decoration: none;
@@ -199,7 +203,7 @@ nav a.active {
 }
 
 footer {
-    bottom: 0;
+    /* bottom: 0; */
     margin-top: 30%;
     text-align: center;
     font-size: 1.25em;
@@ -207,6 +211,10 @@ footer {
 
 footer * {
   display: inline-block;
+}
+
+footer p {
+	margin-top: 10%;
 }
 
 /****** ABOUT US PHOTO FLIPS ******/
