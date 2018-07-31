@@ -320,6 +320,21 @@ section {
 	margin-left: 5%;
 }
 
+.egg-one {
+	height: 30px;
+	margin-left: 5%;
+}
+
+.egg-two {
+	height: 30px;
+	margin-left: 5%;
+}
+
+.egg-three {
+	height: 30px;
+	margin-left: 5%;
+}
+
 .easter-egg {
 	display: none;
 	width: 10%;
@@ -332,4 +347,3 @@ section {
 .raccoon:hover + .easter-egg {
 	display: block;
 }
-
