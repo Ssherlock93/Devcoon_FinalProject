@@ -34,6 +34,7 @@ body {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	margin: 0px;
+	margin-top: 35%;
 	padding: 0px;
 	background-color: #fff;
 	min-height: 100%;
@@ -179,3 +180,63 @@ footer * {
 	display: inline-block;
 }
 
+/****** HEATHER STYLES FOR ABOUT US PHOTO FLIPS ******/
+.card-container {
+  cursor: pointer;
+  height: 150px;
+  /* perspective: 600; */
+  position: relative;
+  width: 100%;
+}
+.card {
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  width: 100%;
+
+  max-width: 15%;
+    display: inline-block;
+    margin-left: 1.75%;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card .side1 {
+  backface-visibility: hidden;
+  border-radius: 6px;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  background: green;
+  color: white;
+  text-align: center;
+  line-height: 125px;
+}
+
+.card .back1 {
+  background: #eaeaed;
+  color: #0087cc;
+/*   line-height: 150px; */
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.margin-1 {
+  margin-left: 115px;
+  display: inline-block;
+
+}
+
+.margin-2 {
+  display: inline-block;
+  margin-left: 300px;
+}
+
+.margin-3 {
+  display: inline-block;
+  margin-left: 480px;
+}
