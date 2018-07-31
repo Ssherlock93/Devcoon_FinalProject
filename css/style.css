@@ -279,6 +279,7 @@ footer p {
 	margin-left: 65.8%;
 }
 
+
 /****** Social Media Icons ******/
 
 .fa-twitter {
@@ -312,5 +313,22 @@ footer p {
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
+}
+
+section {
+	height: 30px;
+}
+
+.easter-egg {
+	display: none;
+	width: 10%;
+}
+
+.raccoon {
+	color: white;
+
+}
+.raccoon:hover + .easter-egg {
+	display: block;
 }
 
