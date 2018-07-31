@@ -199,11 +199,12 @@ nav a.active {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  padding: 60px 30px;
-  text-align: center;
-  font-size: 1.25em;
+    /* position: fixed; */
+    bottom: 0;
+    margin-top: 30%;
+    /* padding: 60px 30px; */
+    text-align: center;
+    font-size: 1.25em;
 }
 
 footer * {
