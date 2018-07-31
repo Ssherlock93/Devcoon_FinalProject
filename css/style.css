@@ -278,3 +278,16 @@ footer p {
 .margin-3 {
 	margin-left: 65.8%;
 }
+
+.easter-egg {
+	display: none;
+	width: 10%;
+}
+
+.raccoon {
+	color: white;
+
+}
+.raccoon:hover + .easter-egg {
+	display: block;
+}
