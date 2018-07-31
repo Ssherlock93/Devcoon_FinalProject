@@ -79,8 +79,6 @@ h3 {
 }
 
 .image-about {
-  /* width: 20%; */
-  padding: 10px;
   height: 100%;
 }
 
@@ -263,7 +261,7 @@ footer p {
 }
 
 .card .back1 {
-	background: white;
+	/* background: white; */
 	transform: rotateY(180deg);
 }
 
@@ -315,35 +313,44 @@ footer p {
   margin: 5px 2px;
 }
 
+/* RACCOON EASTER EGGS */
+
 section {
-	height: 30px;
-	margin-left: 5%;
+	height: 300px;
+	width: 300px;
+}
+
+.egg-image {
+	height: 300px;
+	width: 300px;
 }
 
 .egg-one {
-	height: 30px;
+	/* height: 30px; */
 	margin-left: 5%;
 }
 
 .egg-two {
-	height: 30px;
+	/* height: 30px; */
 	margin-left: 5%;
 }
 
 .egg-three {
-	height: 30px;
-	margin-left: 5%;
+	/* height: 30px; */
+	position: absolute;
+	top: 442px;
+	right: 90px;
 }
 
 .easter-egg {
 	display: none;
-	width: 10%;
+	/* width: 10%; */
 }
 
 .raccoon {
 	color: white;
-
 }
+
 .raccoon:hover + .easter-egg {
 	display: block;
 }
