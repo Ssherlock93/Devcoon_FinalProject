@@ -112,13 +112,13 @@ nav a.active {
 }
 
 footer {
-	background-color: rgb(16,55,80);
-	border-top: 2px solid rgb(6, 19, 27);
-	bottom: 0;
-	color: white;
-	font-size: 1em;
-	position: fixed;
-	text-align: center;
+    background-color: rgb(16,55,80);
+    border-top: 2px solid rgb(6, 19, 27);
+    bottom: 0;
+    color: white;
+    position: fixed;
+    text-align: center;
+    width: 100%;
 }
 
 footer a:visited {
@@ -127,7 +127,11 @@ footer a:visited {
 
 footer * {
 	display: inline-block;
-	padding-top: 20px;
+}
+
+footer p {
+	line-height: 2.25em;
+	text-decoration: none;
 }
 
 .image-about {
