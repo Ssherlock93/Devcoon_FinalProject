@@ -255,12 +255,12 @@ form h3 {
 	cursor: pointer;
 	height: 150px;
 	display: inline-block;
+	
 }
 
 .card {
 	display: inline-block;
 	height: 300px;
-	margin-bottom: 30%;
 	margin-left: 13.75%;
 	max-width: 15%;
 	position: absolute;
