@@ -218,7 +218,6 @@ footer p {
 
 .ul-about {
 	color: white;
-    font-size: 1.5vw;
     font-weight: bold;
     margin: 21% 0 0 0;
     text-align: center;
@@ -255,7 +254,7 @@ form h3 {
 	cursor: pointer;
 	height: 150px;
 	display: inline-block;
-	
+
 }
 
 .card {
@@ -314,7 +313,7 @@ form h3 {
 
 .egg-two {
 	position: absolute;
-top: 400px;
+	top: 480px;
     right: 690px;
 }
 
