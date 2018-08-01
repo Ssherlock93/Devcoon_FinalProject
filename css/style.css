@@ -117,7 +117,8 @@ footer {
 	bottom: 0;
 	color: white;
 	font-size: 1em;
-	position: fixed;
+	/* position: fixed; */
+	margin-top: 20%;
 	text-align: center;
 }
 
@@ -129,6 +130,7 @@ footer * {
 	display: inline-block;
 	padding-top: 20px;
 }
+
 .image-about {
 	height: 100%;
 }
@@ -198,14 +200,32 @@ footer * {
 	width: 174px;
 }
 
+.about-title {
+	margin-bottom: 3%;
+}
+
+.about-guess {
+	color: rgb(16,55,80);
+	font-size: xx-large;
+	letter-spacing: 0.2vw;
+	margin-bottom: 3%;
+	text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+	text-transform: none;
+}
+
 .ul-about {
 	color: white;
-	font-size: 1em;
-	font-weight: bold;
-	margin: 0 auto;
-	text-align: center;
-	padding: 10px;
+    font-size: 1.5vw;
+    font-weight: bold;
+    margin: 21% 0 0 0;
+    text-align: center;
+    padding: 0px 5%;
 }
+
+li span {
+	color: rgb(16,55,80);
+}
+
 #choices {
 	display: block;
 	clear: both;
