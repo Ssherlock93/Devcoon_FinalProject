@@ -117,8 +117,7 @@ footer {
 	bottom: 0;
 	color: white;
 	font-size: 1em;
-	/* position: fixed; */
-	margin-top: 20%;
+	position: fixed;
 	text-align: center;
 }
 
@@ -257,6 +256,7 @@ form h3 {
 .card {
 	display: inline-block;
 	height: 300px;
+	margin-bottom: 30%;
 	margin-left: 13.75%;
 	max-width: 15%;
 	position: absolute;
