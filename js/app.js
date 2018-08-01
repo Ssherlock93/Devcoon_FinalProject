@@ -18,10 +18,7 @@ var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctA
 
 // var getting = JSON.parse(localStorage.settingAnswers); 
 
-if (localStorage.settingAnswers > 0){
-var parsingLocalStorage =  JSON.parse(localStorage.settingAnswers);
-document.getElementById('resultsDisplayer').innerHTML = '<h2>You got ' + parsingLocalStorage + ' of ' + questions.length + ' questions correct</h2>';
-}
+
 
 
 var localStorageSetter = function () {
