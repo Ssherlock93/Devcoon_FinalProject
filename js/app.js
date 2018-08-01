@@ -9,16 +9,17 @@ var trackingQuestionsThatWereWrong = [];
 
 
 
+
 var localStorageSetter = function () {
   var stringer = JSON.stringify(totalCorrectAnswers.length);
   var setting = localStorage.setItem('settingAnswers', stringer);
 };
 var localStorageForWrong = function () {
-  for (var i = 0; i < trackingQuestionsThatWereWrong.length; i ++){
-    var stringifyWrong = JSON.stringify(trackingQuestionsThatWereWrong[i]);
-    var settingWrong = localStorage.setItem('settingWrong', stringifyWrong);
-  };
-}
+  // for (var i = 0; i < trackingQuestionsThatWereWrong.length; i++){
+  var stringifyWrong = JSON.stringify(trackingQuestionsThatWereWrong/* [i] */);
+  var settingWrong = localStorage.setItem('settingWrong', stringifyWrong);
+  // };
+};
 
 
 
@@ -113,7 +114,7 @@ function checkAnswer(e){
   position++;
 
 
-// this is needed, right?
+  // this is needed, right?
   quizComplete = false;
   if (position >= questions.length)
     quizComplete = true;
