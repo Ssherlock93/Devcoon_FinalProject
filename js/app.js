@@ -4,36 +4,20 @@
 var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
 var questions = [];
 var results = [];
-// var x = ['gooose', 'duck', 'swan'];
-// var stringer = JSON.stringify(x);
-// var setting = localStorage.setItem('settingx', x);
-// var getting = localStorage.getItem('settingx');
-
-// if (totalCorrectAnswers.length > 0) {
-// var stringify = JSON.stringify(totalCorrectAnswers);
-//  }
-
-
-
-//for local storage: total correct answers, results array, name
-
-// var getting = JSON.parse(localStorage.settingAnswers); 
-
 
 var localStorageSetter = function () {
   var stringer = JSON.stringify(totalCorrectAnswers.length);
   var setting = localStorage.setItem('settingAnswers', stringer);
   var questionsMissed = JSON.stringify('results', results);
   var settingMissed = localStorage.setItem('settingResults', questionsMissed);
-  // var getting = JSON.parse(localStorage.settingAnswers);  
-  // var getting = JSON.parse(localStorage.getItem(localStorage.settingAnswers));  
+  // var getting = JSON.parse(localStorage.settingAnswers);
+  // var getting = JSON.parse(localStorage.getItem(localStorage.settingAnswers));
   // var getting = localStorage.getItem(JSON.parse(setting));
   // return getting;
 };
 
 
 var totalCorrectAnswers = [];
-
 
 var quizComplete;
 
@@ -46,7 +30,7 @@ var quizComplete;
 
 
 
-// questions array is stored in the questions.js file. It is mutidimensional (array of arrays). We will loop through
+// questions array is stored in the questions.js file. It is multidimensional (array of arrays). We will loop through
 // that to get the current question and check the answers based on the final position of the array [4].
 
 
@@ -64,7 +48,6 @@ function displayQuestion(){
     // this will stop the displayQuestion function when the quiz is completed.
     return false;
   }
-
 
 
   // shows the user where they are in the quiz. Question 1 of 10 for example.
@@ -138,17 +121,6 @@ function checkAnswer(e){
 
   // now we need to display that next question, so we displayQuestion() again.
   displayQuestion();
-}
-
-
-
-
-// this works as an example,
-//  var x = ['gooose', 'duck', 'swan'];
-//  var stringer = JSON.stringify(x);
-//  var setting = localStorage.setItem('settingx', x);
-//  var getting = localStorage.getItem('settingx');
-
 
 // and the event listener to make it all come together.
 window.addEventListener('load', displayQuestion, false);
