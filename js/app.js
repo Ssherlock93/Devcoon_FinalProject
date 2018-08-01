@@ -3,13 +3,48 @@
 // increasing as the array is looped through.
 var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
 
+// var x = ['gooose', 'duck', 'swan'];
+// var stringer = JSON.stringify(x);
+// var setting = localStorage.setItem('settingx', x);
+// var getting = localStorage.getItem('settingx');
+
+// if (totalCorrectAnswers.length > 0) {
+// var stringify = JSON.stringify(totalCorrectAnswers);
+//  }
+
+
+
+//for local storage: total correct answers, results array, name
+
+// var getting = JSON.parse(localStorage.settingAnswers); 
+
+if (localStorage.settingAnswers > 0){
+var parsingLocalStorage =  JSON.parse(localStorage.settingAnswers);
+document.getElementById('resultsDisplayer').innerHTML = '<h2>You got ' + parsingLocalStorage + ' of ' + questions.length + ' questions correct</h2>';
+}
+
+
+var localStorageSetter = function () {
+  var stringer = JSON.stringify(totalCorrectAnswers.length);
+  var setting = localStorage.setItem('settingAnswers', stringer);
+  // var getting = JSON.parse(localStorage.settingAnswers);  
+  // var getting = JSON.parse(localStorage.getItem(localStorage.settingAnswers));  
+  // var getting = localStorage.getItem(JSON.parse(setting));
+  // return getting;
+};
+
+
 var totalCorrectAnswers = [];
+
+
 var quizComplete;
 
+// parser();
+// var check = localStorage.totalCorrectAnswers;
 
 
-localStorage.setItem('totalCorrectAnswers', totalCorrectAnswers.length);
-console.log(totalCorrectAnswers);
+
+
 
 
 
@@ -93,26 +128,37 @@ function checkAnswer(e){
     // give them a big hand and increase the score!
     correctAnswer++;
     totalCorrectAnswers.push(correctAnswer);
+    localStorageSetter();
   }
 
   // this will increment the position in the array, changing the question that the
   // user sees.
   position++;
-  console.log(position);
+
+
+  // var stringer = JSON.stringify(totalCorrectAnswers.length);
+  //   var setting = localStorage.setItem('settingAnswers', stringer);
+
   quizComplete = false;
-  console.log(quizComplete);
   if (position >= questions.length)
     quizComplete = true;
-  console.log(quizComplete);
-
   if (quizComplete === true) {
-    localStorage.setItem('totalCorrectAnswers', totalCorrectAnswers.length);
-
+    // var stringer = JSON.stringify(totalCorrectAnswers.length);
+    // var setting = localStorage.setItem('settingAnswers', stringer);
   }
 
   // now we need to display that next question, so we displayQuestion() again.
   displayQuestion();
 }
+
+
+
+
+// this works as an example,
+//  var x = ['gooose', 'duck', 'swan'];
+//  var stringer = JSON.stringify(x);
+//  var setting = localStorage.setItem('settingx', x);
+//  var getting = localStorage.getItem('settingx');
 
 
 // and the event listener to make it all come together.
