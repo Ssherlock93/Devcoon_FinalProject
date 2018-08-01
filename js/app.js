@@ -1,7 +1,7 @@
 'use strict';
 // declare the variables. position = 0 is the default position starting the quiz, and will ++ as the test progresses
 // increasing as the array is looped through.
-var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
+var position = 0, question, questions, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
 
 
 
@@ -12,10 +12,13 @@ var localStorageSetter = function () {
   var setting = localStorage.setItem('settingAnswers', stringer);
 };
 
+// var localStorageForWrong
 
 
 var totalCorrectAnswers = [];
 var trackingQuestionsThatWereWrong = [];
+
+
 
 
 
@@ -32,23 +35,6 @@ var quizComplete;
 
 // questions array is stored in the questions.js file. It is mutidimensional (array of arrays). We will loop through
 // that to get the current question and check the answers based on the final position of the array [4].
-var questions = [['Which of the following is true about variable naming conventions in JavaScript?',
-  'JavaScript variable names must begin with a letter or the underscore character.',
-  'JavaScript variable names are case sensitive.',
-  'Both of the above.',
-  'C'],
-
-['Which of the following is the correct syntax to redirect a url using JavaScript?',
-  'browser.location="http://www.newlocation.com";',
-  'navigator.location="http://www.newlocation.com";',
-  'window.location="http://www.newlocation.com";',
-  'C'],
-
-['Which built-in method removes the last element from an array and returns that element?',
-  'last()',
-  'pop()',
-  'None of the above.',
-  'C']];
 
 //this will display the questions on the page. It will create and fill an h2 with some information.
 function displayQuestion(){
