@@ -2,7 +2,8 @@
 // declare the variables. position = 0 is the default position starting the quiz, and will ++ as the test progresses
 // increasing as the array is looped through.
 var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
-
+var questions = [];
+var results = [];
 // var x = ['gooose', 'duck', 'swan'];
 // var stringer = JSON.stringify(x);
 // var setting = localStorage.setItem('settingx', x);
@@ -18,15 +19,12 @@ var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctA
 
 // var getting = JSON.parse(localStorage.settingAnswers); 
 
-if (localStorage.settingAnswers > 0){
-var parsingLocalStorage =  JSON.parse(localStorage.settingAnswers);
-document.getElementById('resultsDisplayer').innerHTML = '<h2>You got ' + parsingLocalStorage + ' of ' + questions.length + ' questions correct</h2>';
-}
-
 
 var localStorageSetter = function () {
   var stringer = JSON.stringify(totalCorrectAnswers.length);
   var setting = localStorage.setItem('settingAnswers', stringer);
+  var questionsMissed = JSON.stringify('results', results);
+  var settingMissed = localStorage.setItem('settingResults', questionsMissed);
   // var getting = JSON.parse(localStorage.settingAnswers);  
   // var getting = JSON.parse(localStorage.getItem(localStorage.settingAnswers));  
   // var getting = localStorage.getItem(JSON.parse(setting));
@@ -50,23 +48,7 @@ var quizComplete;
 
 // questions array is stored in the questions.js file. It is mutidimensional (array of arrays). We will loop through
 // that to get the current question and check the answers based on the final position of the array [4].
-var questions = [['Which of the following is true about variable naming conventions in JavaScript?',
-  'JavaScript variable names must begin with a letter or the underscore character.',
-  'JavaScript variable names are case sensitive.',
-  'Both of the above.',
-  'C'],
 
-['Which of the following is the correct syntax to redirect a url using JavaScript?',
-  'browser.location="http://www.newlocation.com";',
-  'navigator.location="http://www.newlocation.com";',
-  'window.location="http://www.newlocation.com";',
-  'C'],
-
-['Which built-in method removes the last element from an array and returns that element?',
-  'last()',
-  'pop()',
-  'None of the above.',
-  'C']];
 
 //this will display the questions on the page. It will create and fill an h2 with some information.
 function displayQuestion(){
@@ -127,8 +109,15 @@ function checkAnswer(e){
   if(choice === questions[position][4]){
     // give them a big hand and increase the score!
     correctAnswer++;
+    questions[position][5] = true;
     totalCorrectAnswers.push(correctAnswer);
+  }
+
+  if (questions[position][5] === false) {
+    results.push(questions[position][0]);
+  }
     localStorageSetter();
+
   }
 
   // this will increment the position in the array, changing the question that the
