@@ -3,36 +3,16 @@
 // increasing as the array is looped through.
 var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
 
-// var x = ['gooose', 'duck', 'swan'];
-// var stringer = JSON.stringify(x);
-// var setting = localStorage.setItem('settingx', x);
-// var getting = localStorage.getItem('settingx');
-
-// if (totalCorrectAnswers.length > 0) {
-// var stringify = JSON.stringify(totalCorrectAnswers);
-//  }
-
-
-
-//for local storage: total correct answers, results array, name
-
-// var getting = JSON.parse(localStorage.settingAnswers); 
-
-
-
-
 var localStorageSetter = function () {
   var stringer = JSON.stringify(totalCorrectAnswers.length);
   var setting = localStorage.setItem('settingAnswers', stringer);
-  // var getting = JSON.parse(localStorage.settingAnswers);  
-  // var getting = JSON.parse(localStorage.getItem(localStorage.settingAnswers));  
+  // var getting = JSON.parse(localStorage.settingAnswers);
+  // var getting = JSON.parse(localStorage.getItem(localStorage.settingAnswers));
   // var getting = localStorage.getItem(JSON.parse(setting));
   // return getting;
 };
 
-
 var totalCorrectAnswers = [];
-
 
 var quizComplete;
 
@@ -40,12 +20,7 @@ var quizComplete;
 // var check = localStorage.totalCorrectAnswers;
 
 
-
-
-
-
-
-// questions array is stored in the questions.js file. It is mutidimensional (array of arrays). We will loop through
+// questions array is stored in the questions.js file. It is multidimensional (array of arrays). We will loop through
 // that to get the current question and check the answers based on the final position of the array [4].
 var questions = [['Which of the following is true about variable naming conventions in JavaScript?',
   'JavaScript variable names must begin with a letter or the underscore character.',
@@ -80,16 +55,13 @@ function displayQuestion(){
     return false;
   }
 
-
-
   // shows the user where they are in the quiz. Question 1 of 10 for example.
   document.getElementById('status').innerHTML = 'Question ' + (position+1) + ' of ' + questions.length;
 
   // we're getting into the weeds now. Position 0 is the actual question in the array
   question = questions[position][0];
 
-  // choiceA is position 1 in the questions array for the current question. This repeats for
-  // b and c as well.
+  // choiceA is position 1 in the questions array for the current question. This repeats for b and c as well.
   choiceA = questions[position][1];
   choiceB = questions[position][2];
   choiceC = questions[position][3];
@@ -107,7 +79,7 @@ function displayQuestion(){
   document.getElementById('quiz').innerHTML += '<button type="submit">Submit</button>';
 }
 
-// add an event listener for the click o the submit button we created.
+// add an event listener for the click of the submit button we created.
 document.getElementById('quiz').addEventListener('submit', checkAnswer);
 
 // let's create the answer checking function.
@@ -133,30 +105,17 @@ function checkAnswer(e){
   position++;
 
 
-  // var stringer = JSON.stringify(totalCorrectAnswers.length);
-  //   var setting = localStorage.setItem('settingAnswers', stringer);
-
   quizComplete = false;
   if (position >= questions.length)
     quizComplete = true;
   if (quizComplete === true) {
-    // var stringer = JSON.stringify(totalCorrectAnswers.length);
-    // var setting = localStorage.setItem('settingAnswers', stringer);
+
+
   }
 
   // now we need to display that next question, so we displayQuestion() again.
   displayQuestion();
 }
-
-
-
-
-// this works as an example,
-//  var x = ['gooose', 'duck', 'swan'];
-//  var stringer = JSON.stringify(x);
-//  var setting = localStorage.setItem('settingx', x);
-//  var getting = localStorage.getItem('settingx');
-
 
 // and the event listener to make it all come together.
 window.addEventListener('load', displayQuestion, false);
