@@ -217,11 +217,12 @@ footer p {
 }
 
 .ul-about {
-	color: white;
+    color: white;
     font-weight: bold;
     margin: 21% 0 0 0;
     text-align: center;
     padding: 0px 5%;
+    font-size: 90%;
 }
 
 li span {
@@ -364,4 +365,9 @@ form h3 {
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
+}
+
+/* SCORES STYLES */
+#resultsDisplayer {
+	margin-top: 50%;
 }
