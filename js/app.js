@@ -113,8 +113,7 @@ function checkAnswer(e){
     localStorageSetter();
   }
   else if (choice !== questions[position][4]) {
-    trackingQuestionsThatWereWrong.push(questions[position][0]); 
-
+    trackingQuestionsThatWereWrong.push(questions[position][0]);
   }
 
   // this will increment the position in the array, changing the question that the
