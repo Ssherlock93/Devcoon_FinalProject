@@ -3,20 +3,6 @@
 // increasing as the array is looped through.
 var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
 
-// var x = ['gooose', 'duck', 'swan'];
-// var stringer = JSON.stringify(x);
-// var setting = localStorage.setItem('settingx', x);
-// var getting = localStorage.getItem('settingx');
-
-// if (totalCorrectAnswers.length > 0) {
-// var stringify = JSON.stringify(totalCorrectAnswers);
-//  }
-
-
-
-//for local storage: total correct answers, results array, name
-
-// var getting = JSON.parse(localStorage.settingAnswers); 
 
 
 
@@ -24,14 +10,13 @@ var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctA
 var localStorageSetter = function () {
   var stringer = JSON.stringify(totalCorrectAnswers.length);
   var setting = localStorage.setItem('settingAnswers', stringer);
-  // var getting = JSON.parse(localStorage.settingAnswers);  
-  // var getting = JSON.parse(localStorage.getItem(localStorage.settingAnswers));  
-  // var getting = localStorage.getItem(JSON.parse(setting));
-  // return getting;
 };
 
 
+
 var totalCorrectAnswers = [];
+var trackingQuestionsThatWereWrong = [];
+
 
 
 var quizComplete;
@@ -126,6 +111,10 @@ function checkAnswer(e){
     correctAnswer++;
     totalCorrectAnswers.push(correctAnswer);
     localStorageSetter();
+  }
+  else if (choice !== questions[position][4]) {
+    trackingQuestionsThatWereWrong.push(questions[position][0]); 
+
   }
 
   // this will increment the position in the array, changing the question that the

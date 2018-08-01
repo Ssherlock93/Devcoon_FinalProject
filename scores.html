@@ -31,6 +31,7 @@
   </header>
   <main>
     <div class="col-1">
+      <div id="resultsDisplayer"></div>
       
       <table>
 
@@ -51,6 +52,13 @@
       <p>(206) 681-9318</p>
     </div>
   </footer>
+
+  <script>
+  if (localStorage.settingAnswers > 0){
+var parsingLocalStorage =  JSON.parse(localStorage.settingAnswers);
+var doesThisWork = document.getElementById('resultsDisplayer').innerHTML ='<h2>You got ' + parsingLocalStorage + 'questions correct</h2>'
+}
+  </script>
   <script src="js/app.js"></script>
 </body>
 
