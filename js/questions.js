@@ -1,6 +1,6 @@
 'use strict';
 
-var questions = [['Which of the following is true about variable naming conventions in JavaScript?',
+var questions = [['Which of the following is true about variable naming conventions in JavaScript?', //eslint-disable-line
   'JavaScript variable names must begin with a letter or the underscore character.',
   'JavaScript variable names are case sensitive.',
   'Both of the above.',
@@ -59,5 +59,4 @@ var questions = [['Which of the following is true about variable naming conventi
   'join()',
   'indexOf()',
   'A']
-
 ];

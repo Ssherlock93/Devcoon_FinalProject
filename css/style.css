@@ -39,8 +39,11 @@ body {
 	margin: 0px;
 	margin-top: 15%;
 	padding: 0px;
-	background-color: #fff;
 	min-height: 100%;
+	background: url('/images/background.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: top center;
 }
 
 p {
@@ -104,9 +107,9 @@ header {
 	left: 0px;
 	width: 100%;
   	box-sizing: border-box;
-  	background-color: white;
+  	background-color: rgb(16,55,80);
 	padding: 15px 30px 20px 30px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.514);
+	border-bottom: 2px solid rgb(6, 19, 27);
 	z-index: 100;
 }
 
@@ -122,6 +125,8 @@ header::after {
 	width: 174px;
 	height: 50px;
 	cursor: pointer;
+	border: 2px solid darkgray;
+	border-radius: 6px;
 }
 
 #menu {
@@ -146,7 +151,7 @@ a {
 }
 
 nav a {
-  color: rgb(16,55,80);
+  color: darkgray;
 	text-decoration: none;
 	margin: 0 10px;
 }
@@ -201,34 +206,59 @@ nav a.active {
 }
 
 footer {
-    /* bottom: 0; */
+    bottom: 0;
     margin-top: 30%;
     text-align: center;
-    font-size: 1.25em;
+		font-size: 1.25em;
+		background-color: rgb(16,55,80);
+		border-top: 2px solid rgb(6, 19, 27);
+		color: white;
+}
+a {
+	text-decoration: none;
+}
+footer a:visited {
+	color: white;
 }
 
 footer * {
-  display: inline-block;
+	display: inline-block;
+	padding-top: 20px;
 }
 
 footer p {
-	margin-top: 10%;
+	margin-top: 20px;
 }
 
+
 /****** ABOUT US PHOTO FLIPS ******/
-.p-about {
+.ul-about {
 	color: white;
-	line-height: 10.25em;
-	font-size: 1.5em;
+	font-size: 1em;
 	font-weight: bold;
-	margin: 0 auto 1em auto;
+	margin: 0 auto;
 	text-align: center;
+	padding: 10px;
 }
 #choices {
 	display: block;
 	clear: both;
+	padding: 10px;
+	border: 2px solid darkgray;
+	border-radius: 6px;
+	margin: 0 auto;
+	max-width: 60%;
+	background:rgba(92, 92, 92, 0.95);
 }
-
+#quiz {
+	color: white;
+}
+#status {
+	color: rgb(41, 138, 202);
+}
+form h3 {
+	color: rgb(41, 138, 202);
+}
 .card-container {
 	cursor: pointer;
 	height: 150px;
@@ -263,6 +293,7 @@ footer p {
 .card .back1 {
 	/* background: white; */
 	transform: rotateY(180deg);
+	border: 2px solid darkgray;
 }
 
 .margin-1 {
