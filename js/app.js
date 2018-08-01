@@ -4,6 +4,8 @@
 var position = 0, question, questions, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
 
 
+var totalCorrectAnswers = [];
+var trackingQuestionsThatWereWrong = [];
 
 
 
@@ -11,12 +13,14 @@ var localStorageSetter = function () {
   var stringer = JSON.stringify(totalCorrectAnswers.length);
   var setting = localStorage.setItem('settingAnswers', stringer);
 };
+var localStorageForWrong = function () {
+  for (var i = 0; i < trackingQuestionsThatWereWrong.length; i ++){
+    var stringifyWrong = JSON.stringify(trackingQuestionsThatWereWrong[i]);
+    var settingWrong = localStorage.setItem('settingWrong', stringifyWrong);
+  };
+}
 
-// var localStorageForWrong
 
-
-var totalCorrectAnswers = [];
-var trackingQuestionsThatWereWrong = [];
 
 
 
@@ -100,6 +104,8 @@ function checkAnswer(e){
   }
   else if (choice !== questions[position][4]) {
     trackingQuestionsThatWereWrong.push(questions[position][0]);
+    localStorageForWrong();
+
   }
 
   // this will increment the position in the array, changing the question that the
@@ -107,15 +113,12 @@ function checkAnswer(e){
   position++;
 
 
-  // var stringer = JSON.stringify(totalCorrectAnswers.length);
-  //   var setting = localStorage.setItem('settingAnswers', stringer);
-
+// this is needed, right?
   quizComplete = false;
   if (position >= questions.length)
     quizComplete = true;
   if (quizComplete === true) {
-    // var stringer = JSON.stringify(totalCorrectAnswers.length);
-    // var setting = localStorage.setItem('settingAnswers', stringer);
+
   }
 
   // now we need to display that next question, so we displayQuestion() again.
