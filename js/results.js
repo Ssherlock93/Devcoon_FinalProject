@@ -5,10 +5,10 @@ if (localStorage.settingAnswers > 0){
 
 if (localStorage.settingWrong){
   var parsingLocalStorageWrong = JSON.parse(localStorage.settingWrong);
-  var doesThisShowUp = document.getElementById('resultsDisplayer');
-  doesThisShowUp.innerHTML += '<h3 id ="results">These are the questions you should study:</h3>';
+  var wrongQuestions = document.getElementById('resultsDisplayer');
+  wrongQuestions.innerHTML += '<h3 id ="results">These are the questions you should study:</h3>';
 
   for (var str of parsingLocalStorageWrong) {
-    doesThisShowUp.innerHTML += '<li id ="questionsWrong">' + str + '</li>';
+    wrongQuestions.innerHTML += '<li id ="questionsWrong">' + str + '</li>';
   }
 }
