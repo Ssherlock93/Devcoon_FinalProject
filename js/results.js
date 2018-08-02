@@ -11,4 +11,5 @@ if (localStorage.settingWrong){
   for (var str of parsingLocalStorageWrong) {
     wrongQuestions.innerHTML += '<li id ="questionsWrong">' + str + '</li>';
   }
+
 }
