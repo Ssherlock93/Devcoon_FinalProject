@@ -15,7 +15,7 @@ Learning new information that is the equivalent to the drops of water that fall 
 
 We've created a quiz that allows users to practice some of the vocabulary and logic that they've been learning in the Code Fellows 201 bootcamp.
 
-##Here's how we did it:
+## Here's how we did it:
 1. We set up our newly formed group by creating a "Team Agreement" with our work hours, break times, anger management plan, snack rotations, and team name.
 
 2. We began the project with a brainstorming session to determine how we could incorporate the new skills that we had just learned in Scott Schmidt's Summer 201 bootcamp.
