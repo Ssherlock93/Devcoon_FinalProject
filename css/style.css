@@ -240,6 +240,23 @@ li span {
 	background:rgba(92, 92, 92, 0.95);
 }
 
+.welcome {
+    display: block;
+    clear: both;
+    padding: 10px;
+    border: 2px solid darkgray;
+    border-radius: 6px;
+    margin: 0 auto 2%;
+    max-width: 50%;
+    background: rgba(92, 92, 92, 0.95);
+}
+
+.instructions {
+	color: white;
+	font-weight: bold;
+	padding: 1%;
+}
+
 .retake {
 	margin-top: 20px;
 }
