@@ -83,7 +83,7 @@ function checkAnswer(e) {
 
   // this will redirect the user to the results page if the quiz is done
   if (position === questions.length) {
-    window.location.href = 'scores.html';
+    window.location.href = 'results.html';
   }
   // now we need to display that next question, so we displayQuestion() again.
   displayQuestion();
