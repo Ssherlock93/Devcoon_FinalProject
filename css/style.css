@@ -210,23 +210,32 @@ footer p {
 .about-guess {
 	color: rgb(16,55,80);
 	font-size: xx-large;
-	letter-spacing: 0.2vw;
-	margin-bottom: 3%;
 	text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
 	text-transform: none;
 }
 
+.dev-guess {
+    display: block;
+    clear: both;
+    padding: 10px;
+    border: 2px solid darkgray;
+    border-radius: 6px;
+    margin: 0 auto 2%;
+    max-width: 50%;
+    background: rgba(92, 92, 92, 0.95);
+}
 .ul-about {
     color: white;
     font-weight: bold;
-    margin: 21% 0 0 0;
+	margin: 21% 0 0 0;
+	line-height: 1.25em;
     text-align: center;
     padding: 0px 5%;
-    font-size: 90%;
+	font-size: 90%;
 }
 
 li span {
-	color: rgb(16,55,80);
+	color: rgb(41, 138, 202);
 }
 
 #choices {
@@ -321,7 +330,7 @@ form h3 {
 
 .card .side1 {
 	backface-visibility: hidden;
-	background: darkgray;
+	background: rgba(92, 92, 92, 0.95);
 	border-radius: 6px;
 	height: 100%;
 	position: absolute;
