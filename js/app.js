@@ -1,50 +1,22 @@
 'use strict';
 // declare the variables. position = 0 is the default position starting the quiz, and will ++ as the test progresses
 // increasing as the array is looped through.
-var position = 0, question, questions, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0;
-
-
-var totalCorrectAnswers = [];
-var trackingQuestionsThatWereWrong = [];
-
-
-
+var position = 0, question, choice, choices, choiceA, choiceB, choiceC, correctAnswer = 0, totalCorrectAnswers = [], trackingQuestionsThatWereWrong = [];
 
 var localStorageSetter = function () {
   var stringer = JSON.stringify(totalCorrectAnswers.length);
-  var setting = localStorage.setItem('settingAnswers', stringer);
+  localStorage.setItem('settingAnswers', stringer);
 };
 var localStorageForWrong = function () {
-  // for (var i = 0; i < trackingQuestionsThatWereWrong.length; i++){
-  var stringifyWrong = JSON.stringify(trackingQuestionsThatWereWrong/* [i] */);
-  var settingWrong = localStorage.setItem('settingWrong', stringifyWrong);
-  // };
+  var stringifyWrong = JSON.stringify(trackingQuestionsThatWereWrong);
+  localStorage.setItem('settingWrong', stringifyWrong);
 };
-
-
-
-
-
-
-
-var quizComplete;
-
-// parser();
-// var check = localStorage.totalCorrectAnswers;
-
-
-
-
-
-
-
 // questions array is stored in the questions.js file. It is mutidimensional (array of arrays). We will loop through
 // that to get the current question and check the answers based on the final position of the array [4].
-
 //this will display the questions on the page. It will create and fill an h2 with some information.
-function displayQuestion(){
+function displayQuestion() {
   // if position is less than or = to the length of the question array, display the final tally message.
-  if(position >= questions.length){
+  if (position >= questions.length) {
 
     document.getElementById('quiz').innerHTML = '<h2>You got ' + correctAnswer + ' of ' + questions.length + ' questions correct</h2>';
     document.getElementById('status').innerHTML = 'Test Finished';
@@ -55,11 +27,8 @@ function displayQuestion(){
     // this will stop the displayQuestion function when the quiz is completed.
     return false;
   }
-
-
-
   // shows the user where they are in the quiz. Question 1 of 10 for example.
-  document.getElementById('status').innerHTML = 'Question ' + (position+1) + ' of ' + questions.length;
+  document.getElementById('status').innerHTML = 'Question ' + (position + 1) + ' of ' + questions.length;
 
   // we're getting into the weeds now. Position 0 is the actual question in the array
   question = questions[position][0];
@@ -87,23 +56,22 @@ function displayQuestion(){
 document.getElementById('quiz').addEventListener('submit', checkAnswer);
 
 // let's create the answer checking function.
-function checkAnswer(e){
+function checkAnswer(e) {
   e.preventDefault();
   choices = document.getElementsByName('choices');
-  for(var i = 0; i < choices.length; i++){
-    if(choices[i].checked){
+  for (var i = 0; i < choices.length; i++) {
+    if (choices[i].checked) {
       choice = choices[i].value;
     }
   }
 
   // checking to see if the users choice === position [4].
-  if(choice === questions[position][4]){
+  if (choice === questions[position][4]) {
     // give them a big hand and increase the score!
     correctAnswer++;
     totalCorrectAnswers.push(correctAnswer);
     localStorageSetter();
-  }
-  else if (choice !== questions[position][4]) {
+  } else if (choice !== questions[position][4]) {
     trackingQuestionsThatWereWrong.push(questions[position][0]);
     localStorageForWrong();
 
@@ -113,30 +81,13 @@ function checkAnswer(e){
   // user sees.
   position++;
 
-
-  // this is needed, right?
-  quizComplete = false;
-  if (position >= questions.length)
-    quizComplete = true;
-  if (quizComplete === true) {
-
+  // this will redirect the user to the results page if the quiz is done
+  if (position === questions.length) {
+    window.location.href = 'scores.html';
   }
-
   // now we need to display that next question, so we displayQuestion() again.
   displayQuestion();
+
 }
-
-
-
-
-// this works as an example,
-//  var x = ['gooose', 'duck', 'swan'];
-//  var stringer = JSON.stringify(x);
-//  var setting = localStorage.setItem('settingx', x);
-//  var getting = localStorage.getItem('settingx');
-
-
 // and the event listener to make it all come together.
 window.addEventListener('load', displayQuestion, false);
-
-

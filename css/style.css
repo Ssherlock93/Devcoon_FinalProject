@@ -239,6 +239,32 @@ li span {
 	max-width: 50%;
 	background:rgba(92, 92, 92, 0.95);
 }
+
+#resultsDisplayer {
+	display: block;
+	clear: both;
+	padding: 10px;
+	border: 2px solid darkgray;
+	border-radius: 6px;
+	margin: 0 auto;
+	max-width: 50%;
+	background:rgba(92, 92, 92, 0.95);
+}
+
+#resultsDisplayer h2 {
+	color: rgb(41, 138, 202);
+}
+
+#resultsDisplayer h3 {
+	color: rgb(41, 138, 202);
+}
+
+#questionsWrong {
+	color: white;
+	font-size: 1.25em;
+	line-height:1.25em;
+}
+
 #quiz {
 	color: white;
 }
@@ -365,9 +391,4 @@ form h3 {
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
-}
-
-/* SCORES STYLES */
-#resultsDisplayer {
-	margin-top: 50%;
 }
