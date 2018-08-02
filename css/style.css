@@ -240,6 +240,9 @@ li span {
 	background:rgba(92, 92, 92, 0.95);
 }
 
+.retake {
+	margin-top: 20px;
+}
 #resultsDisplayer {
 	display: block;
 	clear: both;
