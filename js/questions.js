@@ -42,21 +42,21 @@ var questions = [['Which of the following is true about variable naming conventi
   'title',
   'B'],
 
-['Which of the following function of String object combines the text of two strings and returns a new string?',
-  'add()',
-  'concat()',
-  'append()',
+['Which is the correct way to add the eslint file to your project?',
+  'eslintrc.json',
+  '.eslintrc.json',
+  '.eslinterc.json',
   'B'],
 
-['Which of the following function of String object is used to find a match between a regular expression and a string, and to replace the matched substring with a new substring?',
-  'replace()',
-  'match()',
-  'search()',
+['What is the correct HTML tag to add audio to your site?',
+  'audio',
+  'noise',
+  'sound',
   'A'],
 
-['Which of the following function of Array object returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found?',
-  'lastIndexOf()',
-  'join()',
-  'indexOf()',
+['What is the pixel equivalent of 1em?',
+  '16 px',
+  '8 px',
+  '1 px',
   'A']
 ];
