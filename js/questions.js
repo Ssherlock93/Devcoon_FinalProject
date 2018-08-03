@@ -1,10 +1,22 @@
 'use strict';
 
-var questions = [['Which of the following is true about variable naming conventions in JavaScript?', //eslint-disable-line
-  'JavaScript variable names must begin with a letter or the underscore character.',
-  'JavaScript variable names are case sensitive.',
-  'Both of the above.',
-  'C'],
+var questions = [['What is the pixel equivalent of 1em?',
+  '16 px',
+  '8 px',
+  '1 px',
+  'A'],
+
+['What is the correct HTML tag to add audio to your site?',
+  'audio',
+  'noise',
+  'sound',
+  'A'],
+
+['How do you make text bold?',
+  'font-style:bold',
+  'font-weight:bold;',
+  'font-body;',
+  'B'],
 
 ['Which of the following is the correct syntax to redirect a url using JavaScript?',
   'browser.location="http://www.newlocation.com";',
@@ -17,12 +29,6 @@ var questions = [['Which of the following is true about variable naming conventi
   'pop()',
   'None of the above.',
   'C'],
-
-['How do you make text bold?',
-  'font-style:bold',
-  'font-weight:bold;',
-  'font-body;',
-  'B'],
 
 ['How do you select all p elements inside a div element?',
   'div p',
@@ -48,15 +54,9 @@ var questions = [['Which of the following is true about variable naming conventi
   '.eslinterc.json',
   'B'],
 
-['What is the correct HTML tag to add audio to your site?',
-  'audio',
-  'noise',
-  'sound',
-  'A'],
-
-['What is the pixel equivalent of 1em?',
-  '16 px',
-  '8 px',
-  '1 px',
-  'A']
+['Which of the following is true about variable naming conventions in JavaScript?', //eslint-disable-line
+  'JavaScript variable names must begin with a letter or the underscore character.',
+  'JavaScript variable names are case sensitive.',
+  'Both of the above.',
+  'C'],
 ];
