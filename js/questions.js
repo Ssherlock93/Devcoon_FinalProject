@@ -1,6 +1,6 @@
 'use strict';
 
-var questions = [['What is the pixel equivalent of 1em?',
+var questions = [['What is the pixel equivalent of 1em?', //eslint-disable-line
   '16 px',
   '8 px',
   '1 px',
@@ -54,7 +54,7 @@ var questions = [['What is the pixel equivalent of 1em?',
   '.eslinterc.json',
   'B'],
 
-['Which of the following is true about variable naming conventions in JavaScript?', //eslint-disable-line
+['Which of the following is true about variable naming conventions in JavaScript?',
   'JavaScript variable names must begin with a letter or the underscore character.',
   'JavaScript variable names are case sensitive.',
   'Both of the above.',
